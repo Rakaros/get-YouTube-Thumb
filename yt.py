@@ -4,7 +4,7 @@ import urllib
 from bs4 import BeautifulSoup as bs
 
 
-url = input('Digite a url do vídeo: ')
+url = input('Enter the video URL: ')
 
 cf= urllib.request.urlopen(url)
 #print(cf.read())
@@ -12,7 +12,7 @@ soup = bs(cf.read(), features='html.parser')
 
 thumb = soup.find('link', {'itemprop': 'thumbnailUrl'})['href']
 
-print('\n Aqui está a thumbnail do vídeo:\n')
+print('\n Here is the thumbnail:\n')
 print(thumb)
 print('\n')
-input('Pressione Enter para sair...')
+input('Press enter to leave...')
